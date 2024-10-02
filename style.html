@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <h1></h1>
+    <script type="text/javascript">
+        function analyzeText() {
+            var text = document.getElementById("textInput").value;
+
+            // Count characters
+            var charCount = text.length;
+
+            // Count words (split by whitespace)
+            var words = text.trim().split(/\s+/);
+            var wordCount = words.filter(function(word) { return word.length > 0; }).length;
+
+            // Count lines (split by newline characters)
+            var lineCount = text.split(/\n/).length;
+
+            // Display the results in an alert message
+            alert("Characters: " + charCount + "\nWords: " + wordCount + "\nLines: " + lineCount);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Text Analysis Tool</h1>
+        <textarea id="textInput" rows="10" cols="50" placeholder="Enter your text here..."></textarea>
+        <br/><br/>
+        <input type="submit" value="Analyze Text" onclick="analyzeText()" class="submit-btn"/>
+    </div>
+
+</body>
+</html>
